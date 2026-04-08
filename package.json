@@ -4,9 +4,8 @@
     "description": "Primera aplicacion de Alejandro usando flow",
     "main": "index.js",
     "types": "module",
-    "scripts": {"node src/app.js"
-    },
-    "test": {
+    "scripts": {
+        "start": "node src/app.js",
         "test": "node test/app.test.js"
     },
     "repository": {

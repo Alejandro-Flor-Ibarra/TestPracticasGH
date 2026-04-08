@@ -1,5 +1,3 @@
-import { version } from "react";
-
 export function saludar(nombre) {
     return `Hola, ${nombre}!, bienvenido a mi aplicación Alejandro 1.0.0`;
 }
@@ -15,3 +13,8 @@ export function estadoSistema() {
         message: "El sistema está funcionando correctamente."
     };
 }
+
+export function sumar(a, b) {
+    return a + b;
+}
+
