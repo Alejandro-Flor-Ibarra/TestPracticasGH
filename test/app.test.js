@@ -1,4 +1,4 @@
-import {saludar, despedir, estadoSistema, sumar} from "../src/app.js";
+import {saludar, despedir, estadoSistema, sumar, restar} from "../src/app.js";
 
 function ejecutarPruebas() {
     let pasadas = 0;
@@ -31,7 +31,16 @@ function ejecutarPruebas() {
         fallidas++;
     }
 
-    console.log("\nResultados: ", pasadas, "pasadas, ", fallidas, "fallidas.");
+   
+    const resultadorestar = restar(10, 4);
+    if (resultadorestar === 6) {
+        console.log("Test 4 pasado: función restar calcula correctamente 10 - 4 = 6.");
+        pasadas++;
+    } else {
+        console.log("Test 4 fallido: ", resultadorestar, "debería ser 6");
+        fallidas++;
+    }
+     console.log("\nResultados: ", pasadas, "pasadas, ", fallidas, "fallidas.");
     if (fallidas > 0) {
         process.exit(1);
     }
