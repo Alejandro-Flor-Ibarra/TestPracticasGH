@@ -1,4 +1,4 @@
-import {saludar, despedir, estadoSistema, sumar} from "../src/app.js";
+import {saludar, despedir, estadoSistema, sumar, healthCheck} from "../src/app.js";
 
 function ejecutarPruebas() {
     let pasadas = 0;
@@ -28,6 +28,15 @@ function ejecutarPruebas() {
         pasadas++;
     } else {
         console.log("Test 3 fallido: ", resultadoSuma, "debería ser 8");
+        fallidas++;
+    }
+    const health = healthCheck();
+    if (health.status === "ok") {
+        console.log("Test healthCheck pasado: función healthCheck devuelve status ok.");
+        pasadas++;
+    } 
+    else {
+        console.log("Test healthCheck fallido: ", health);
         fallidas++;
     }
 
