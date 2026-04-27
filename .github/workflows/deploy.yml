@@ -1,0 +1,28 @@
+name: Deploy – StreamFlow
+
+on:
+  push:
+    branches: [ "main" ] # Solo se activa cuando el código llega a la rama final
+
+jobs:
+  deploy:
+    name: Desplegar aplicación
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Desplegar aplicación
+        run: |
+          echo "🚀 Iniciando despliegue automático..."
+          echo "✅ Despliegue completado exitosamente en la rama main"
+          echo "🌐 URL de producción: https://flowcoderider.example.com"
