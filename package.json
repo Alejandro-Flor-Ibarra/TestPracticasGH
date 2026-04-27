@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node src/app.js",
-    "test": "node test/app.test.js"
+    "test": "node test/app.test.js",
+    "build": "echo 'Build completed'"
   },
   "repository": {
     "type": "git",
