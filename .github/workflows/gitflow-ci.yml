@@ -1,0 +1,6 @@
+name: CI - GitFlow coderider
+
+on: 
+  Feature:
+    branches: [develop]
+  Release:
