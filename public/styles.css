@@ -1,7 +1,222 @@
-body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-header { background: #003087; color: white; padding: 20px; border-radius: 8px; }
-.badge { background: #009B4C; color: white; padding: 4px 12px; border-radius: 20px; font-size: 14px; }
-.card { background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0; }
-.status { font-size: 18px; margin: 10px 0; }
-button { background: #009B4C; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; }
-button:hover { background: #007a3d; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #333;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(135deg, #003087 0%, #004d99 100%);
+  color: white;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 30px;
+}
+
+.header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-content h1 {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.version-badge {
+  background: #009B4C;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 155, 76, 0.3);
+}
+
+main {
+  flex: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-left: 4px solid #009B4C;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.card h2 {
+  color: #003087;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.status {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+  border-left: 4px solid #009B4C;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #003087;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+button, .btn-primary {
+  background: linear-gradient(135deg, #009B4C 0%, #007a3d 100%);
+  color: white;
+  border: none;
+  padding: 14px 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 155, 76, 0.3);
+  transition: all 0.3s ease;
+  text-transform: none;
+}
+
+button:hover, .btn-primary:hover {
+  background: linear-gradient(135deg, #007a3d 0%, #005a2d 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 155, 76, 0.4);
+}
+
+button:active, .btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 155, 76, 0.3);
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.08);
+  color: #666;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 20px 15px;
+    margin-bottom: 20px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-content h1 {
+    font-size: 24px;
+  }
+
+  main {
+    padding: 0 15px;
+  }
+
+  .card {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .card h2 {
+    font-size: 20px;
+  }
+
+  button, .btn-primary {
+    padding: 12px 28px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content h1 {
+    font-size: 20px;
+  }
+
+  .version-badge {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .card {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .card p {
+    font-size: 14px;
+  }
+
+  .status {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+
+  button, .btn-primary {
+    width: 100%;
+    padding: 12px 20px;
+  }
+}

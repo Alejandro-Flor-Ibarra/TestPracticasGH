@@ -1,4 +1,3 @@
-import { version } from "react";
 
 const VERSION = "1.1.2";
 
